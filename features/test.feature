@@ -17,3 +17,14 @@ Feature: Test
             | something-interesting | 
             | thing one             |
             | thing 2               |
+
+    Scenario Outline: Fixture above examples
+        Given a thing
+        When "<something-interesting>" is printed
+        Then nothing
+
+        @fixture.withServer("Version123")
+        Examples: Some examples
+            | something-interesting | 
+            | thing one             |
+            | thing 2               |
